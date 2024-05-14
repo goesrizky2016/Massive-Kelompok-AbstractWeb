@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fdfdfd; /* Warna latar belakang putih */
+}
+
+/* Animasi untuk objek bergerak */
+@keyframes moveObject {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-50px); }
+  100% { transform: translateY(0); }
+}
+
+.object {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background-color: #ffb6b9; /* Warna objek */
+  border-radius: 50%;
+  animation: moveObject 4s ease-in-out infinite; /* Animasi bergerak */
+}
+
+/* Gradasi warna pastel untuk latar belakang */
+body:before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ffcccc, #ffcc99, #ffb3b3); /* Gradasi warna pastel */
+  z-index: -1; /* Menempatkan di belakang konten */
+}
